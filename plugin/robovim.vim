@@ -1,6 +1,6 @@
 " Robodoc support for Vim
 " Maintainer: Bartek Jasicki <thindil@laeran.pl>
-" Last Change:  2019-05-07
+" Last Change:  2019-05-10
 " License: GPLv3
 if exists('g:robovim')
    finish
@@ -13,22 +13,22 @@ let g:robovim = 1
 " SOURCE
 fun s:set_props()
 " ****
-   let b:filetype = &ft
+   let l:filetype = &ft
    let b:header_type = 1 " 1 for normal headers, 2 for internal headers
-   let b:search_for = '' " Search criteria to find line with package name
+   let l:search_for = '' " Search criteria to find line with package name
    "Ada ------------------------------
-   if b:filetype == 'ada'
+   if l:filetype == 'ada'
       let b:header_mark = '-- ****'
       let b:remark_mark = '--'
       let b:end_mark = '-- ****'
-      let b:search_for = 'package'
-      let b:result_index = 1
+      let l:search_for = 'package'
+      let l:result_after = 'package' " Package name will be after this word
       if expand('%:e') == 'adb'
          let b:header_type = 2
-         let b:result_index = 2
+         let l:result_after = 'body'
       endif
    " Vim ------------------------------
-   elseif b:filetype == 'vim'
+   elseif l:filetype == 'vim'
       let b:header_mark = '" ****'
       let b:remark_mark = '"'
       let b:end_mark = '" ****'
@@ -39,12 +39,24 @@ fun s:set_props()
       let b:end_mark = '**** */'
     endif
     let b:package_name = expand('%:t:r')
-    if b:search_for != ''
-      let l:line = search(b:search_for, 'bcn')
+    " Search for package name if it is set
+    if l:search_for != ''
+      let l:position = getpos('.')
+      call cursor(1, 1)
+      let l:line = search(l:search_for, 'cn')
+      call cursor(l:position[1], l:position[2])
       if l:line != 0
-         let b:package_name = split(getline(l:line))[b:result_index]
+         let l:i = 0
+         for l:word in split(getline(l:line))
+            if l:word == l:result_after
+               let b:package_name = split(getline(l:line))[l:i + 1]
+               break
+            endif
+            let l:i = l:i + 1
+         endfor
       endif
     endif
+    " Set package name to defined by user
     if exists('b:set_package_name')
        let b:package_name = b:set_package_name
     endif
