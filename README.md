@@ -22,18 +22,19 @@ This plugin follows the standard runtime path structure, and as such it can be i
 
 ## Usage
 
-Place cursor on the element to which you want to add documentation and enter
+Place cursor on the element to which you want to add a documentation and enter
 Vim command `Roboheader [headertype]` where *headertype* is one of types of headers
 supported by your setting of Robodoc. It will add a skeleton documentation header
 above cursor line filled with basic informations.
 
-You can close documentation by entering Vim command `Robofooter`. It will add
+You can close the documentation by entering Vim command `Robofooter`. It will add
 Robodoc closing mark below your cursor line.
 
-Most of parameters (like package name, element name) plugin can auto-detect. If
-you are not satisfied with this, you can use Vim command `Robopackage
-[packagename]` to set new name for package in selected buffer. Using this
-command without *packagename* will cause reset it to auto-detect again.
+Most of parameters (like package name, element name) the plugin can
+auto-detect. If you are not satisfied with auto-detection, you can use Vim
+command `Robopackage [packagename]` to set a new name for a package in
+selected buffer. Using this command without *packagename* will cause reset it
+to auto-detect again.
 
 More information on how to use, configure or extend this plugin you can find in
-plugin help file with command `help robovim`.
+the plugin help file with Vim command `help robovim`.
