@@ -1,21 +1,30 @@
 ## General informations
-Robovim is simple Vim plugin which allow easier add [Robodoc](https://rfsber.home.xs4all.nl/Robo/)
-formatted documentation to source code. At this moment supported languages are:
-Ada, Vim, Python and C, plus all languages with C-like comments should
-generally works too. Additionally, it is easy to add support for more
-languages.
+Robovim is a simple Vim plugin which allow easier add [Robodoc](https://rfsber.home.xs4all.nl/Robo/)
+formatted documentation to a source code. At this moment supported programming
+languages are: Ada, Vim, Python and C. All programming languages with C-like
+comments should generally works too. Additionally, it is easy to add support
+for more programming languages.
 
 ## Installation
 
-### Manual installation
-Install the distributed files into Vim runtime directory which is usually
-~/.vim/, or $HOME/vimfiles on Windows.
+This plugin follows the standard runtime path structure, and as such it can be installed with a variety of plugin managers:
+
+| Plugin Manager | Install with... |
+| ------------- | ------------- |
+| [Pathogen](https://github.com/tpope/vim-pathogen) | `git clone https://github.com/thindil/robovim ~/.vim/bundle/robovim`<br/>Remember to run `:Helptags` to generate help tags |
+| [NeoBundle](https://github.com/Shougo/neobundle.vim) | `NeoBundle 'thindil/robovim'` |
+| [Vundle](https://github.com/VundleVim/Vundle.vim) | `Plugin 'thindil/robovim'` |
+| [Plug](https://github.com/junegunn/vim-plug) | `Plug 'thindil/robovim'` |
+| [Dein](https://github.com/Shougo/dein.vim) | `call dein#add('thindil/robovim')` |
+| [minpac](https://github.com/k-takata/minpac/) | `call minpac#add('thindil/robovim')` |
+| pack feature (native Vim 8 package feature)| `git clone https://github.com/thindil/robovim ~/.vim/pack/dist/start/robovim`<br/>Remember to run `:helptags` to generate help tags |
+| manual | copy all of the files into your `~/.vim` directory |
 
 ## Usage
 
-Place cursor on element to which you want to add documentation and enter Vim
-command `Roboheader [headertype]` where *headertype* is one of types of headers
-supported by your setting of Robodoc. It will add skeleton documentation header
+Place cursor on the element to which you want to add documentation and enter
+Vim command `Roboheader [headertype]` where *headertype* is one of types of headers
+supported by your setting of Robodoc. It will add a skeleton documentation header
 above cursor line filled with basic informations.
 
 You can close documentation by entering Vim command `Robofooter`. It will add
