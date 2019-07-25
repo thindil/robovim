@@ -1,7 +1,9 @@
 ## General informations
 Robovim is simple Vim plugin which allow easier add [Robodoc](https://rfsber.home.xs4all.nl/Robo/)
-formatted documentation to source code. At this moment only Ada and Vim are
-supported but it is easy to add support for more file types.
+formatted documentation to source code. At this moment supported languages are:
+Ada, Vim, Python and C, plus all languages with C-like comments should
+generally works too. Additionally, it is easy to add support for more
+languages.
 
 ## Installation
 
@@ -16,7 +18,7 @@ command `Roboheader [headertype]` where *headertype* is one of types of headers
 supported by your setting of Robodoc. It will add skeleton documentation header
 above cursor line filled with basic informations.
 
-You can close documentationt by entering Vim command `Robofooter`. It will add
+You can close documentation by entering Vim command `Robofooter`. It will add
 Robodoc closing mark below your cursor line.
 
 Most of parameters (like package name, element name) plugin can auto-detect. If
