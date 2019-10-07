@@ -1,6 +1,6 @@
 " Robodoc support for Vim
 " Maintainer: Bartek Jasicki <thindil@laeran.pl>
-" Last Change:  2019-05-10
+" Last Change:  2019-10-07
 " License: GPLv3
 if exists('g:robovim')
    finish
@@ -45,6 +45,11 @@ fun s:set_props()
       let b:remark_mark = '*'
       let b:end_mark = '**** */'
     endif
+    " Set package name to defined by user
+    if exists('b:set_package_name')
+       let b:package_name = b:set_package_name
+       return
+    endif
     let b:package_name = expand('%:t:r')
     " Search for package name if it is set
     if l:search_for != ''
@@ -62,10 +67,6 @@ fun s:set_props()
             let l:i = l:i + 1
          endfor
       endif
-    endif
-    " Set package name to defined by user
-    if exists('b:set_package_name')
-       let b:package_name = b:set_package_name
     endif
 endfun
 
