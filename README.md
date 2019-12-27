@@ -1,9 +1,9 @@
 ## General informations
 Robovim is a simple Vim plugin which allow easier add [Robodoc](https://rfsber.home.xs4all.nl/Robo/)
 formatted documentation to a source code. At this moment supported programming
-languages are: Ada, Vim, Python and C. All programming languages with C-like
-comments should generally works too. Additionally, it is easy to add support
-for more programming languages.
+languages are: Ada, Vim, Python, Tcl and C. All programming languages with
+C-like comments should generally works too. Additionally, it is easy to add
+support for more programming languages.
 
 ## Installation
 
