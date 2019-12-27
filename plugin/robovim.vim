@@ -1,6 +1,6 @@
 " Robodoc support for Vim
 " Maintainer: Bartek Jasicki <thindil@laeran.pl>
-" Last Change:  2019-10-07
+" Last Change:  2019-12-27
 " License: GPLv3
 if exists('g:robovim')
    finish
@@ -39,6 +39,11 @@ fun s:set_props()
       let b:end_mark = '# ****'
       let b:search_mark = 'class'
       let b:result_after = 'class'
+   " Tcl ------------------------------
+   elseif l:filetype == 'tcl'
+      let b:header_mark = '# ****'
+      let b:remark_mark = '#'
+      let b:end_mark = '# ****'
    " Others ---------------------------
     else
       let b:header_mark = '/* ****'
