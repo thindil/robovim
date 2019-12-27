@@ -8,11 +8,11 @@ Extending                                                  |robovim-extending|
 ==============================================================================
 Introduction                                                   *robovim-intro*
 
-Robovim is very simple plugin to support adding Robodoc headers to source code
-inside Vim. Most parameters can be autodetect by plugin. At this moment it
-support only Ada and Vim code. To add support for more file types, please look
-at |robovim-extending|. For more information about Robodoc please look at:
-https://rfsber.home.xs4all.nl/Robo/
+Robovim is a very simple plugin to support adding Robodoc headers to a source
+code inside Vim. Most parameters can be autodetect by plugin. At this moment
+it support Ada, Vim, Python, Tcl and C code. To add support for more file
+types, please look at |robovim-extending|. For more information about Robodoc
+please look at: https://rfsber.home.xs4all.nl/Robo/
 
 ==============================================================================
 Usage                                                          *robovim-usage*
